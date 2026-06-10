@@ -1,0 +1,22 @@
+*{
+  margin: 0;
+  padding: 0;
+  color: #94A3B8;
+}
+
+h1,h2,h3,h4,h5{
+  color: #F8FAFC;
+}
+
+.about-banner{
+  background-image: url('./assets/about-banner.gif');
+  border-radius: 30px;
+  background-size: cover;
+  border: 1px solid #020617;
+  background-position: center;
+  box-shadow:
+  0 1px 30px rgba(0, 0, 0, 0.5),
+  0 0 20px rgba(0, 212, 255, 0.2);
+  height: 706px;
+  opacity: 0.8;
+}
