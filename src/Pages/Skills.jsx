@@ -9,80 +9,84 @@ import Typography from '@mui/material/Typography';
 import SkipPreviousIcon from '@mui/icons-material/SkipPrevious';
 import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 import SkipNextIcon from '@mui/icons-material/SkipNext';
+import { Divider } from '@mui/material';
 
-function Skills({skills}) {
+function Skills({ skills }) {
   const theme = useTheme();
 
   const skillsData = {
-  html: {
-    title: "HTML",
-    description: "HTML5 is the latest version of HyperText Markup Language (HTML), the standard markup language used to create and structure web pages. It introduces semantic elements such as <header>, <nav>, <section>, <article>, and <footer>, which improve code readability and accessibility. HTML5 also supports multimedia elements like <audio> and <video> without requiring external plugins. It provides features such as local storage, form validation, geolocation, and canvas for graphics, making modern web development more efficient and interactive."
-  },
-  css: {
-    title: "CSS",
-    description: "CSS3 is used to style web pages by controlling layouts, colors, typography, animations, and responsiveness. It helps create modern, attractive, and user-friendly CSS3 is used to style web pages by controlling layouts, colors, typography, animations, and responsiveness. It helps create modern, attractive, and user-friendly websites. I have experience using Flexbox, CSS Grid, and Media Queries to build responsive designs that work seamlessly across different devices and screen sizes.."
-  },
-  javascript: {
-    title: "JavaScript",
-    description: "JavaScript is a versatile programming language used to create interactive and dynamic web applications. It enables features such as DOM manipulation, event handling, form validation, asynchronous programming, and API integration. I use JavaScript to build responsive user interfaces and enhance user experiences with efficient and maintainable code.I have experience working with modern JavaScript concepts such as ES6+, functions, promises, async/await, and array methods to develop scalable web applications."
-  },
-  react: {
-    title: "React.js",
-    description: "React.js is a JavaScript library developed by Facebook for building user interfaces, especially single-page applications. It allows developers to build reusable UI components and efficiently update and render components when data changes.React components can be either functional or class-based. Functional components are now preferred due to their simplicity and the introduction of Hooks, which provide state management and lifecycle handling in a function-based format."
-  },
-  node: {
-    title: "Node.js",
-    description: "Node.js is a powerful JavaScript runtime environment that enables developers to build fast and scalable server-side applications. It uses an event-driven, non-blocking architecture, making it ideal for handling multiple requests efficiently. I use Node.js to develop RESTful APIs, manage server-side logic, and create high-performance web applications.I enjoy using Node.js to develop modern web applications that require speed, scalability, and real-time functionality."
-  },
-  express: {
-    title: "Express.js",
-    description: "Express.js is a lightweight and efficient web framework for Node.js that helps streamline the development of server-side applications. It offers powerful tools for routing, middleware integration, request handling, and API development. I use Express.js to build secure and scalable backend systems that efficiently manage application logic and data flow. Its simplicity and flexibility enable me to develop maintainable web services that power modern full-stack applications."
-  },
-  mongoDB: {
-    title: "MongoDB",
-    description: "MongoDB is a popular NoSQL database that stores data in flexible, JSON-like documents, making it highly scalable and easy to work with. It provides high performance, efficient data storage, and seamless integration with modern web applications. I use MongoDB to design and manage databases, perform CRUD operations, and handle large amounts of application data efficiently. Its flexibility and scalability make it an excellent choice for building dynamic and data-driven applications."
-  },
-  restAPI: {
-    title: "REST API",
-    description: "REST API (Representational State Transfer Application Programming Interface) is a standard architectural style used for communication between client and server applications. It enables efficient data exchange through HTTP methods such as GET, POST, PUT, and DELETE. I use REST APIs to connect frontend and backend systems, manage data flow, and build scalable web applications. Well-designed REST APIs help ensure secure, reliable, and maintainable communication across modern software systems."
-  },
-  bootstrap: {
-    title: "Bootstrap",
-    description: "BootstBootstrap is a popular front-end framework used to build responsive and mobile-first web applications. It provides a collection of pre-built components, a powerful grid system, and utility classes that help speed up development. I use Bootstrap to create consistent, user-friendly interfaces and ensure seamless responsiveness across different devices and screen sizes.rap is a CSS framework for responsive design."
-  },
-  mui: {
-    title: "Material UI",
-    description: "Material UI (MUI) is a popular React component library that implements Google's Material Design principles. It provides a wide range of pre-built, customizable components and styling solutions that help create modern and responsive user interfaces. I use MUI to build consistent, visually appealing applications while improving development speed and user experience."
-  }
-};
+    html: {
+      title: "HTML",
+      subtitle: "HyperText Markup Language",
+      description1: "HTML5 is the foundation of modern web development and serves as the standard markup language for creating web pages. It provides the structural framework of a website by organizing content into meaningful elements such as headers, sections, articles, forms, and multimedia components. HTML5 also introduces semantic tags that improve accessibility, search engine optimization, and overall code readability.",
+      description2: "I use HTML5 to build well-structured, responsive, and user-friendly web applications. By leveraging semantic elements and modern features such as audio, video, and local storage, I create websites that are both functional and accessible across different devices and browsers."
+    },
+    css: {
+      title: "CSS",
+      subtitle: "CSS stands for Cascading Style Sheets",
+      description1: "CSS3 is a powerful stylesheet language used to enhance the appearance and layout of web pages. It provides advanced styling capabilities, including animations, transitions, gradients, Flexbox, Grid, and responsive design techniques that help create visually appealing user interfaces.",
+      description2: "I use CSS3 to transform static HTML structures into attractive and engaging designs. By combining modern layout systems and responsive design principles, I ensure that websites deliver a consistent and seamless user experience across desktops, tablets, and mobile devices."
+    },
+    javascript: {
+      title: "JavaScript",
+      subtitle: "Dynamic Web Development",
+      description1: "JavaScript is a versatile programming language that adds interactivity and dynamic functionality to websites. It enables developers to manipulate web page content, handle user events, perform calculations, and communicate with servers without requiring page reloads.",
+      description2: "I use JavaScript extensively to create interactive user experiences and dynamic web applications. By utilizing modern ES6+ features such as arrow functions, promises, async/await, and modules, I build efficient, maintainable, and scalable solutions for both frontend and backend development."
+    },
+    react: {
+      title: "React.js",
+      subtitle: "Frontend JavaScript Library",
+      description1: "React.js is a powerful JavaScript library used for building fast and interactive user interfaces. It follows a component-based architecture that allows developers to create reusable UI components and efficiently manage application state.",
+      description2: "I use React to develop scalable single-page applications that deliver smooth user experiences. By leveraging React Hooks, state management techniques, and component reusability, I build maintainable applications that are optimized for performance and future growth."
+    },
+    node: {
+      title: "Node.js",
+      subtitle: "JavaScript Runtime Environment",
+      description1: "Node.js is a server-side runtime environment that enables JavaScript to run outside the browser. Built on Google's V8 engine, it uses an event-driven and non-blocking architecture, making it highly efficient for handling multiple requests and real-time operations.",
+      description2: "I use Node.js to build scalable backend systems, RESTful APIs, and server-side applications. Its extensive ecosystem and asynchronous programming model allow me to create high-performance applications that support modern web development requirements."
+    },
+    express: {
+      title: "Express.js",
+      subtitle: "Backend Web Framework",
+      description1: "Express.js is a lightweight and flexible web application framework built on top of Node.js. It simplifies backend development by providing powerful tools for routing, middleware management, request handling, and API creation.",
+      description2: "I use Express.js to design and develop secure, efficient, and scalable backend services. Its simplicity and flexibility allow me to build RESTful APIs, implement authentication systems, and manage server-side functionality with clean and organized code."
+    },
+    mongoDB: {
+      title: "MongoDB",
+      subtitle: "NoSQL Database Solution",
+      description1: "MongoDB is a document-oriented NoSQL database designed to store and manage large amounts of data efficiently. Unlike traditional relational databases, MongoDB uses flexible JSON-like documents, making it easier to adapt to changing application requirements.",
+      description2: "I use MongoDB to create scalable database solutions for modern web applications. Its flexible schema design, powerful querying capabilities, and seamless integration with Node.js enable me to manage application data effectively while ensuring high performance."
+    },
+    restAPI: {
+      title: "REST API",
+      subtitle: "Application Communication Interface",
+      description1: "REST APIs provide a standardized way for different software systems to communicate over the internet. They use HTTP methods such as GET, POST, PUT, and DELETE to perform operations and exchange data between clients and servers.",
+      description2: "I design and integrate RESTful APIs to connect frontend applications with backend services efficiently. By implementing secure endpoints, proper data validation, and structured responses, I ensure reliable communication and seamless user experiences across web applications."
+    },
+    bootstrap: {
+      title: "Bootstrap",
+      subtitle: "Responsive UI Framework",
+      description1: "Bootstrap is a popular front-end framework that simplifies the process of building responsive and mobile-friendly websites. It offers a comprehensive collection of pre-designed components, utility classes, and a flexible grid system that accelerates UI development.",
+      description2: "I use Bootstrap to quickly develop professional and consistent user interfaces while maintaining responsiveness across different screen sizes. Its reusable components and customization options allow me to create clean layouts while reducing development time and effort."
+    },
+    mui: {
+      title: "Material UI",
+      subtitle: "React Component Library",
+      description1: "Material UI is a modern React component library that follows Google's Material Design guidelines. It provides a rich set of reusable components, customization options, and responsive design features that help developers build elegant and user-friendly interfaces.",
+      description2: "I use Material UI to create visually appealing and highly interactive web applications with React. Its extensive component ecosystem and styling system enable me to develop professional-grade user interfaces while maintaining design consistency throughout a project."
+    }
+  };
   return (
-    <div>
-      {<Card sx={{ display: 'flex', backgroundColor: 'transparent', borderRadius: '30px', boxShadow: '0 1px 30px rgba(0, 0, 0, 0.5),0 0 20px rgba(0, 212, 255, 0.2)' }}>
-        <Box sx={{ display: 'flex', flexDirection: 'column' }}>
-          <CardContent sx={{ flex: '1 0 auto' }}>
-            <Typography component="div" variant="h5" sx={{ color: '#00d4ff', pl: 1 }}>
-              {skillsData[skills].title}
-            </Typography>
-          </CardContent>
-          <Box sx={{ display: 'flex' }}>
-            <p className='text-start mx-4'>{skillsData[skills].description}</p>
-          </Box>
-        </Box>
-      </Card>}
-      {/* <Card sx={{ display: 'flex', backgroundColor: 'transparent', borderRadius: '30px', boxShadow: '0 1px 30px rgba(0, 0, 0, 0.5),0 0 20px rgba(0, 212, 255, 0.2)' }}>
-        <Box sx={{ display: 'flex', flexDirection: 'column' }}>
-          <CardContent sx={{ flex: '1 0 auto' }}>
-            <Typography component="div" variant="h5" sx={{ color: '#00d4ff', pl: 1 }}>
-              React.js
-            </Typography>
-          </CardContent>
-          <Box sx={{ display: 'flex' }}>
-            <p className='text-start mx-4'>React.js is a JavaScript library developed by Facebook for building user interfaces, especially single-page applications. It allows developers to build reusable UI components and efficiently update and render components when data changes.
-              React components can be either functional or class-based. Functional components are now preferred due to their simplicity and the introduction of Hooks, which provide state management and lifecycle handling in a function-based format.
-            </p>
-          </Box>
-        </Box>
-      </Card> */}
+    <div className='d-flex align-items-center' style={{ height: '100%' }}>
+      <Box sx={{ height: '90%', mt: 3, pt: 3 }}>
+        <div>
+          <Typography variant="h5" sx={{ color: '#00d4ff', textAlign: 'start', ml: 2, pb: 1 }}>{skillsData[skills].title} </Typography>
+          <Typography sx={{ color: '#F8FAFC', textAlign: 'start', ml: 2 }}>{skillsData[skills].subtitle}</Typography>
+          <Divider variant='middle' sx={{ borderColor: "#00d4ff", borderBottomWidth: "2px", my: 2, width: '80%', boxShadow: "0 0 8px #00d4ff" }}/>
+          <Typography sx={{ textAlign: 'start', ml: 2, pb: 1 }}>{skillsData[skills].description1}</Typography>
+          <Typography sx={{ textAlign: 'start', ml: 2 }}>{skillsData[skills].description2}</Typography>
+        </div>
+      </Box>
     </div>
   )
 }
