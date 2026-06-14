@@ -12,7 +12,11 @@ import { Container, Row } from 'react-bootstrap';
 import logo from '../assets/logo.png'
 function Header() {
     const [anchorElNav, setAnchorElNav] = useState(null);   
-      const pages = ['Home', 'About', 'Projects', 'Contact'];
+      const pages = [ 
+        {name:'About', id:'about'}, 
+        {name:'Skills', id:'skills'}, 
+        {name:'Projects', id:'project'},
+         {name:'Contact', id:'contact'}];
       const handleOpenNavMenu = (event) => {
         setAnchorElNav(event.currentTarget);
       };   
@@ -21,13 +25,14 @@ function Header() {
       };
   return (
     <div>
-        <div>
       <Container>
         <Row>
           <Box sx={{ flexGrow: 1 }}>
             <AppBar
-              position="static"
+              position="fixed"
               sx={{
+                 width: { xs: "95%", md: "90%", lg: "77%" },
+                 left: "50%",transform: "translateX(-50%)",
                 borderRadius: '30px',
                 boxShadow:
                   '0 1px 30px rgba(0, 0, 0, 0.5), 0 0 20px rgba(0, 212, 255, 0.2)',
@@ -36,7 +41,6 @@ function Header() {
               
               <Toolbar sx={{ position: 'relative' }}>
                 <img src={logo} height={'50px'}  alt="" style={{width: 'auto'}} />
-                {/* Mobile Menu */}
                 <Box
                   sx={{
                     flexGrow: 1,
@@ -52,40 +56,31 @@ function Header() {
                     <MenuIcon />
                   </IconButton>
 
-                  <Menu
-                    anchorEl={anchorElNav}
-                    open={Boolean(anchorElNav)}
-                    onClose={handleCloseNavMenu}
-                    anchorOrigin={{
-                      vertical: 'bottom',
-                      horizontal: 'right',
-                    }}
-                    transformOrigin={{
-                      vertical: 'top',
-                      horizontal: 'right',
-                    }}
-                    PaperProps={{
-                      sx: {
-                        bgcolor: '#0B1020',
-                        color: '#fff',
-                        borderRadius: 3,
-                        minWidth: 180,
-                        border: '1px solid rgba(123,97,255,.2)',
-                      },
-                    }}
-                  >
-                    {pages.map((page) => (
-                      <MenuItem
-                        key={page}
-                        onClick={handleCloseNavMenu}
-                      >
-                        <Typography>{page}</Typography>
-                      </MenuItem>
-                    ))}
-                  </Menu>
-                </Box>
+               <Menu
+  anchorEl={anchorElNav}
+  open={Boolean(anchorElNav)}
+  onClose={handleCloseNavMenu}
+  sx={{
+    '& .MuiPaper-root': {
+      backgroundColor: '#020617',
+      backgroundImage: 'none',
+    },
+  }}
 
-                {/* Desktop Menu */}
+>
+  <Box >
+    {pages.map((page) => (
+      <MenuItem
+       key={page.id} component='a' href={`#${page.id}`}
+        onClick={handleCloseNavMenu}
+        sx={{ color: '#fff' }}
+      >
+        {page.name}
+      </MenuItem>
+    ))}
+  </Box>
+</Menu>
+                </Box>
                 <Box
                   sx={{
                     flexGrow: 1,
@@ -95,9 +90,8 @@ function Header() {
                   }}
                 >
                   {pages.map((page) => (
-                    <Button
-                    
-                      key={page}
+                    <Button 
+                      key={page.id} component='a' href={`#${page.id}`}
                       sx={{
                         color: '#fff',
                         textTransform: 'none',
@@ -105,7 +99,7 @@ function Header() {
                         fontWeight: 500,
                       }}
                     >
-                      {page}
+                      {page.name}
                     </Button>
                   ))}
                 </Box>
@@ -114,7 +108,6 @@ function Header() {
           </Box>
         </Row>
       </Container>
-    </div>
     </div>
   )
 }

@@ -2,8 +2,8 @@ import React, { useEffect, useState } from 'react'
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import bgImage from '../assets/hero-banner.jpeg'
-import bgImage2 from '../assets/hero-banner2.gif'
+import bgImage from '../assets/hero-banner.png'
+import bgImage2 from '../assets/hero-text.png'
 import htmlIcon from '../assets/html-icon.png'
 import cssIcon from '../assets/css-icon.png'
 import javaIcon from '../assets/javascript-icon.png'
@@ -120,15 +120,18 @@ function HomePage() {
     return (
         <div className='py-4' style={{ backgroundColor: '#020617' }}>
             <Header/>
-            <Container className='py-4 px-4 mt-3'>
-                <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ duration: 2 }} >
+            <Container className='py-4 px-4 mt-5'>
+                <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ duration: 1 }} >
                     <Row >
-                        <Col as={motion.div} animate={{ y: [0, 5, 0] }} transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }} className='d-flex align-items-center' style={{ minHeight: "78vh", borderRadius: '30px', boxShadow: '0 1px 30px rgba(0, 0, 0, 0.5), 0 0 20px rgba(0, 212, 255, 0.2)', backgroundImage: `url(${bgImage})`, backgroundPosition: 'center', backgroundSize: 'cover' }}>      
+                        <Col as={motion.div} animate={{ y: [0, 5, 0] }} transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}  className="hero-banner d-flex justify-content-center align-items-center" style={{ borderRadius: '30px', boxShadow: '0 1px 30px rgba(0, 0, 0, 0.5), 0 0 20px rgba(0, 212, 255, 0.2)', }}>      
+                           <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ duration: 3 }}>
+                            <Box component='img' src={bgImage2} sx={{height:{ xs: '270px', sm:'400px', md:'500px', lg:'600px' }}} alt="" />
+                           </motion.div>
                         </Col>
                     </Row>
                 </motion.div>
             </Container>
-            <Container className='py-4 px-4'>
+            <Container id='about' className='py-4 px-4'>
                 <h1 className='text-center mb-5' style={{ color: '#00d4ff' }}>ABOUT ME</h1>
                 <Row as={motion.div} initial={{ scale: 0 }} whileInView={{ scale: 1 }} viewport={{ once: true, amount: 0.5 }} transition={{duration:1}}>
                     <Col as={motion.div} animate={{ x: [0, 5, 0] }} transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }} className='about-banner d-flex align-items-center'>
@@ -139,13 +142,13 @@ function HomePage() {
                             <p style={{ color: '#cbd5e1' }}>I'm a passionate Full-Stack Developer specializing in the MERN Stack. I enjoy creating responsive, user-friendly web applications and turning ideas into functional digital experiences.</p>
                             <p style={{ color: '#cbd5e1' }}>Through my internship at Luminar Technolab, I gained practical experience in React.js, Node.js, MongoDB, REST APIs, and modern web development practices. I'm always eager to learn new technologies and build innovative solutions that solve real-world problems.</p>
                             <Box sx={{ display: 'flex', justifyContent: 'center', mb: 2 }}>
-                                <Button component={motion.div} animate={{ x: [0, 5, 0] }} transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }} href={resume} download sx={{ py: 2, px: 4, borderRadius: '30px', color: "#fff", background: "rgba(255,255,255,0.05)", backdropFilter: "blur(1px)", WebkitBackdropFilter: "blur(15px)", border: "1px solid rgba(255,255,255,0.1)", borderRadius: "30px", boxShadow: "0 8px 32px rgba(0,0,0,0.3), 0 0 20px rgba(0,162,255,0.15)" }} variant='contained'>Download Cv</Button>
+                                <Button component={motion.div} animate={{ x: [0, 5, 0] }} transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }} href={resume} download sx={{ py: 2, px: 4, borderRadius: '30px', color: "#fff", background: "rgba(255,255,255,0.05)", backdropFilter: "blur(1px)", WebkitBackdropFilter: "blur(15px)", border: "1px solid #00d4ff", borderRadius: "30px", boxShadow: "0 8px 32px rgba(0,0,0,0.3), 0 0 20px rgba(0,162,255,0.15)" }} variant='contained'>Download Cv</Button>
                             </Box>
                         </Col>
                     </Col>
                 </Row>
             </Container>
-            <Container className='py-4'>
+            <Container id='skills' className='py-4'>
                 <h1 className='text-center mb-5' style={{ color: '#00d4ff' }}>MY SKILLS</h1>
                 <motion.div initial={{ scale: 0 }} whileInView={{ scale: 1 }} viewport={{ once: true, amount: 0.5 }} transition={{duration:1}}>
                     <Grid container spacing={3} >
@@ -178,7 +181,7 @@ function HomePage() {
                 </motion.div>
 
             </Container>
-            <Container className='py-4'>
+            <Container id='project' className='py-4'>
                 <h1 className='text-center mb-5' style={{ color: '#00d4ff' }}>MY PROJECT</h1>
                 <motion.div initial={{ scale: 0 }} whileInView={{ scale: 1 }} viewport={{ once: true, amount: 0.5 }} transition={{duration:1}}>
                     <Box sx={{ flexGrow: 1 }}>
@@ -309,7 +312,7 @@ function HomePage() {
                     </Box>
                 </motion.div>
             </Container>
-            <Container className='py-4'>
+            <Container id='contact' className='py-4'>
                 <h1 className='text-center mb-5' style={{ color: '#00d4ff' }}>Contact Me</h1>
                 <motion.div initial={{ scale: 0 }} whileInView={{ scale: 1 }} viewport={{ once: true, amount: 0.5 }} transition={{duration:1}}>
                     <Grid container spacing={3}>
@@ -422,7 +425,7 @@ function HomePage() {
                         backdropFilter: "blur(15px)",
                         boxShadow: "none",
                         maxHeight: "85vh",
-                    },
+                    }, 
                 }}
             >
                 <Box sx={{ backgroundColor: 'transparent' }}>
@@ -438,12 +441,12 @@ function HomePage() {
                         >
                             <Box sx={{ width: '100%' }}>
                                 <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 1 }}>
-                                    <Grid size={6}>
+                                    <Grid size={{sm:16, lg:6}}>
                                         <Item sx={{ backgroundColor: 'transparent' }}>
                                             <img src={project?.img} alt="" style={{ width: '100%' }} />
                                         </Item>
                                     </Grid>
-                                    <Grid size={6}>
+                                    <Grid size={{sm:16, lg:6}}>
                                         <Item sx={{ backgroundColor: 'transparent' }}>
                                             <h6>Key Features</h6>
                                             <p className='text-start'>{project?.feature1}</p>
