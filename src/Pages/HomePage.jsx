@@ -28,7 +28,6 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import { Link } from 'react-router-dom';
-// import Projects from './Projects';
 import project1 from '../assets/newborn-project.png';
 import project2 from '../assets/game-project.png';
 import Dialog from '@mui/material/Dialog';
@@ -125,7 +124,7 @@ function HomePage() {
                     <Row >
                         <Col as={motion.div} animate={{ y: [0, 5, 0] }} transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}  className="hero-banner d-flex justify-content-center align-items-center" style={{ borderRadius: '30px', boxShadow: '0 1px 30px rgba(0, 0, 0, 0.5), 0 0 20px rgba(0, 212, 255, 0.2)', }}>      
                            <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ duration: 3 }}>
-                            <Box component='img' src={bgImage2} sx={{height:{ xs: '270px', sm:'400px', md:'500px', lg:'600px' }}} alt="" />
+                            <Box component='img' src={bgImage2} sx={{height:{ xs: '260px', sm:'400px', md:'500px', lg:'600px' }}} alt="" />
                            </motion.div>
                         </Col>
                     </Row>

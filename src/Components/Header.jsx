@@ -31,7 +31,7 @@ function Header() {
             <AppBar
               position="fixed"
               sx={{
-                 width: { xs: "95%", md: "90%", lg: "77%" },
+                 width: { xs: "95%", sm: "93%", md: "90%", lg: "77%" },
                  left: "50%",transform: "translateX(-50%)",
                 borderRadius: '30px',
                 boxShadow:

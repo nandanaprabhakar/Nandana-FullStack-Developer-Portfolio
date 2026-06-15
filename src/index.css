@@ -21,7 +21,7 @@ h1,h2,h3,h4,h5{
   border-radius: 30px;
   background-size: cover;
   border: 1px solid #020617;
-  background-position: center;
+  background-position: left;
   box-shadow:
   0 1px 30px rgba(0, 0, 0, 0.5),
   0 0 20px rgba(0, 212, 255, 0.2);
