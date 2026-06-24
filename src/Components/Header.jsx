@@ -25,13 +25,13 @@ function Header() {
       };
   return (
     <div>
-      <Container>
-        <Row>
+      {/* <Container>
+        <Row> */}
           <Box sx={{ flexGrow: 1 }}>
             <AppBar
               position="fixed"
               sx={{
-                 width: { xs: "95%", sm: "93%", md: "90%", lg: "77%" },
+                 width: { xs: "92%", sm: "90%", md: "85%", lg: "77%" }, top: 10,
                  left: "50%",transform: "translateX(-50%)",
                 borderRadius: '30px',
                 boxShadow:
@@ -106,8 +106,8 @@ function Header() {
               </Toolbar>
             </AppBar>
           </Box>
-        </Row>
-      </Container>
+        {/* </Row>
+      </Container> */}
     </div>
   )
 }

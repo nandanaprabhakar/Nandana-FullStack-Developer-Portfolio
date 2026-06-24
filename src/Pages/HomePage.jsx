@@ -187,7 +187,7 @@ function HomePage() {
                         <Grid container spacing={2}>
                             <Grid size={{ xs: 6, md: 8 }}>
                                 {/* <Item> */}
-                                <Item component={motion.div} animate={{ x: [0, 5, 0] }} transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }} onClick={() => handlreProject(projects[0])} className='card-img' sx={{ display: 'flex', backgroundImage: `url(${project1})`, height: '400px', backgroundSize: 'cover', backgroundColor: "rgba(255, 255, 255, 0.1)", backdropFilter: "blur(15px)", WebkitBackdropFilter: "blur(15px)", border: "1px solid rgba(255, 255, 255, 0.18)", boxShadow: "0 4px 27px rgba(0, 212, 255, 0.15)", borderRadius: '17px' }}>
+                                <Item component={motion.div} animate={{ x: [0, 5, 0] }} transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }} onClick={() => handlreProject(projects[0])} sx={{ display: 'flex', backgroundImage: `url(${project1})`, height: '400px', backgroundSize: 'cover', backgroundPosition: 'center left', backgroundColor: "rgba(255, 255, 255, 0.1)", backdropFilter: "blur(15px)", WebkitBackdropFilter: "blur(15px)", border: "1px solid rgba(255, 255, 255, 0.18)", boxShadow: "0 4px 27px rgba(0, 212, 255, 0.15)", borderRadius: '17px' }}>
                                     <Box sx={{ display: 'flex', flexDirection: 'column' }}>
                                         <CardContent sx={{ flex: '1 0 auto' }}>
                                             <Typography component="div" variant="h5">
@@ -418,7 +418,7 @@ function HomePage() {
                 sx={{
                     "& .MuiDialog-paper": {
                         width: { xs: "95%", sm: "90%", md: "80%", lg: "900px" }, // ⭐ key fix
-                        margin: '0',
+                        // margin: '30px',
                         borderRadius: { xs: 0, sm: 2 },
                         backgroundColor: "rgba(0,0,0,0.35) !important",
                         backdropFilter: "blur(15px)",
